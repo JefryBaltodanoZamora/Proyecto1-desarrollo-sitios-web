@@ -20,7 +20,7 @@ and open the template in the editor.
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost:8084/Proyecto1/">Proyecto1</a>
+            <a class="navbar-brand" href="./">Proyecto1</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,16 +30,16 @@ and open the template in the editor.
                   <a class="nav-link" href="./">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./historia.html">Historia</a>
+                  <a class="nav-link" href="./historia.jsp">Historia</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./mision-vision.html">Misión y Visión</a>
+                  <a class="nav-link" href="./mision-vision.jsp">Misión y Visión</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="./acerca-de.html">Acerca de <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="./acerca-de.jsp">Acerca de <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./contactenos.html">Contáctenos</a>
+                  <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
                 </li>
               </ul>
             </div>

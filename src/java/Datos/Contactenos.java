@@ -58,13 +58,13 @@ public class Contactenos {
         try
         {
           // create a mysql database connection
-          String myDriver = "org.gjt.mm.mysql.Driver";
-          String myUrl = "jdbc:mysql://localhost3306/proyecto1";
+          String myDriver = "com.mysql.cj.jdbc.Driver";
+          String myUrl = "jdbc:mysql://localhost:3306/proyecto1";
           Class.forName(myDriver);
           Connection conn = DriverManager.getConnection(myUrl, "root", "");
 
           // the mysql insert statement
-          String query = " insert into users (nombre, apellido, pais, comentarios, correo)"
+          String query = "insert into contactenos (nombre, apellido, pais, comentarios, correo)"
             + " values (?, ?, ?, ?, ?)";
 
           // create the mysql insert preparedstatement

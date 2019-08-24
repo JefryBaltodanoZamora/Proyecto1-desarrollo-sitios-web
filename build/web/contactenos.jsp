@@ -78,10 +78,9 @@ and open the template in the editor.
                 <button class="btn btn-primary" type="submit">Enviar</button>
                 <input class="btn btn-primary" type="button" id=enviar value="Enviar" name="button" onClick='submitForm(this)'/>
                 <% 
-                    System.out.println( "Evaluating date now" ); 
+                    System.out.println( "Calling db from jsp" ); 
                     LogicaContactenos l = new LogicaContactenos();
                     l.guardarFormulatio();
-                    System.out.println( "Evaluating date now" ); 
                 %>
             </form>
         </div>

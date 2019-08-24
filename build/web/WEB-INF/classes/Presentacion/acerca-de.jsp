@@ -1,3 +1,10 @@
+<%-- 
+    Document   : acerca-de
+    Created on : Aug 24, 2019, 3:00:34 PM
+    Author     : jbaltoda
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

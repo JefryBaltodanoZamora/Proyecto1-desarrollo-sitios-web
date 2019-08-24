@@ -3,7 +3,8 @@
     Created on : Aug 24, 2019, 3:01:22 PM
     Author     : jbaltoda
 --%>
-
+<%@page import="java.util.List"%>
+<%@page import="Dominio.LogicaContactenos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
@@ -20,7 +21,7 @@ and open the template in the editor.
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost:8084/Proyecto1/">Proyecto1</a>
+            <a class="navbar-brand" href="./">Proyecto1</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,14 +64,35 @@ and open the template in the editor.
                   </div>
                 </div>
                 <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault03">Correo</label>
+                    <input type="email" class="form-control" id="Correo" placeholder="Correo" required>
+                  </div>
+                </div>
+                <div class="form-row">
                   <div class="col-md-10 mb-10">
                     <label for="validationDefault04">Comentarios</label>
                     <textarea class="form-control rounded-0" id="commentario" placeholder="Comentarios" rows="10"></textarea>
                   </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Enviar</button>
+                <input class="btn btn-primary" type="button" id=enviar value="Enviar" name="button" onClick='submitForm(this)'/>
+                <% 
+                    System.out.println( "Evaluating date now" ); 
+                    LogicaContactenos l = new LogicaContactenos();
+                    l.guardarFormulatio();
+                    System.out.println( "Evaluating date now" ); 
+                %>
             </form>
         </div>
     </body>
+    <script>
+        function submitForm(x){
+           if(x.id=='enviar'){
+              alert("dede");
+           }
+           document.forms[0].submit();
+        }
+    </script>
 </html>
 

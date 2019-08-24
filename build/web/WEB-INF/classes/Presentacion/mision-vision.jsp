@@ -1,3 +1,10 @@
+<%-- 
+    Document   : mision-vision
+    Created on : Aug 24, 2019, 3:02:40 PM
+    Author     : jbaltoda
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,7 +13,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Historia</title>
+        <title>Mision y vision</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,22 +29,22 @@ and open the template in the editor.
                 <li class="nav-item">
                   <a class="nav-link" href="./">Inicio</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./historia.jsp">Historia</a>
+                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="./historia.html">Historia <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="./mision-vision.jsp">Misión y Visión <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./mision-vision.html">Misión y Visión</a>
+                  <a class="nav-link" href="./acerca-de.jsp">Acerca de</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./acerca-de.html">Acerca de</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./contactenos.html">Contáctenos</a>
+                  <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
                 </li>
               </ul>
             </div>
         </nav>
-        <h1>Historia</h1>
+        <h1>Mision</h1>
         <div>
             Lorem Ipsum is simply dummy text of the printing and typesetting ind
             ustry. Lorem Ipsum has been the industry's standard dummy text ever 
@@ -58,6 +65,7 @@ and open the template in the editor.
             re recently with desktop publishing software like Aldus PageMaker in
             cluding versions of Lorem Ipsum
         </div>
+        <h1>Vision</h1>
         <div>
             Lorem Ipsum is simply dummy text of the printing and typesetting ind
             ustry. Lorem Ipsum has been the industry's standard dummy text ever 
@@ -80,3 +88,4 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+

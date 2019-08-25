@@ -6,7 +6,6 @@
 package Dominio;
 
 import Datos.Contactenos;
-
 /**
  *
  * @author jbaltoda
@@ -14,7 +13,11 @@ import Datos.Contactenos;
 public class LogicaContactenos {
     
     //pasar aqui lo del formulario
-    Contactenos contactenos = new Contactenos("test1", "test2", "test3", "test4");
+    Contactenos contactenos;
+
+    public LogicaContactenos(String nombre, String apellido, String pais, String comentario, String correo) {
+         contactenos = new Contactenos(nombre, apellido, pais, comentario, correo);
+    }
     
     public void guardarFormulatio(){
         contactenos.guardar();

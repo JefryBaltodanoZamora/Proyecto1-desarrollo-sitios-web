@@ -14,12 +14,14 @@ public class Contactenos {
     String apellido;
     String pais;
     String comentario;
+    String correo;
 
-    public Contactenos(String nombre, String apellido, String pais, String comentario) {
+    public Contactenos(String nombre, String apellido, String pais, String comentario, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.pais = pais;
         this.comentario = comentario;
+        this.correo = correo;
     }
 
     public String getNombre() {
@@ -54,6 +56,14 @@ public class Contactenos {
         this.comentario = comentario;
     }
     
+    public String getcorreo() {
+        return correo;
+    }
+
+    public void setcorreo(String correo) {
+        this.correo = correo;
+    }
+    
     public void guardar(){
         try
         {
@@ -69,11 +79,11 @@ public class Contactenos {
 
           // create the mysql insert preparedstatement
           PreparedStatement preparedStmt = conn.prepareStatement(query);
-          preparedStmt.setString(1, "test1");
-          preparedStmt.setString(2, "test2");
-          preparedStmt.setString(3, "test3");
-          preparedStmt.setString(4, "test4");
-          preparedStmt.setString(5, "test5");
+          preparedStmt.setString(1, this.nombre);
+          preparedStmt.setString(2, this.apellido);
+          preparedStmt.setString(3, this.pais);
+          preparedStmt.setString(4, this.comentario);
+          preparedStmt.setString(5, this.correo);
 
           // execute the preparedstatement
           preparedStmt.execute();

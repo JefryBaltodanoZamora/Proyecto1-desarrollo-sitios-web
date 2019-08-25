@@ -46,7 +46,7 @@ and open the template in the editor.
             </div>
         </nav>
         <div>
-            <form>
+            <form action="${pageContext.request.contextPath}/servlet" method="post">
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nombre</label>
@@ -66,7 +66,7 @@ and open the template in the editor.
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationDefault03">Correo</label>
-                    <input type="email" class="form-control" id="Correo" placeholder="Correo" required>
+                    <input type="email" class="form-control" id="correo" placeholder="Correo" required>
                   </div>
                 </div>
                 <div class="form-row">
@@ -75,23 +75,9 @@ and open the template in the editor.
                     <textarea class="form-control rounded-0" id="commentario" placeholder="Comentarios" rows="10"></textarea>
                   </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Enviar</button>
-                <input class="btn btn-primary" type="button" id=enviar value="Enviar" name="button" onClick='submitForm(this)'/>
-                <% 
-                    System.out.println( "Calling db from jsp" ); 
-                    LogicaContactenos l = new LogicaContactenos();
-                    l.guardarFormulatio();
-                %>
-            </form>
+                <button class="btn btn-primary" type="submit" name="btnEnviar" value="Button 1">Enviar</button>
+             </form>
         </div>
     </body>
-    <script>
-        function submitForm(x){
-           if(x.id=='enviar'){
-              alert("dede");
-           }
-           document.forms[0].submit();
-        }
-    </script>
 </html>
 

@@ -50,32 +50,36 @@ and open the template in the editor.
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationDefault02">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationDefault03">Pais</label>
-                    <input type="text" class="form-control" id="pais" placeholder="Pais" required>
+                    <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais" required>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="validationDefault03">Correo</label>
-                    <input type="email" class="form-control" id="correo" placeholder="Correo" required>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" required>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-10 mb-10">
                     <label for="validationDefault04">Comentarios</label>
-                    <textarea class="form-control rounded-0" id="commentario" placeholder="Comentarios" rows="10"></textarea>
+                    <textarea class="form-control rounded-0" id="comentario" name="comentario" placeholder="Comentarios" rows="10"></textarea>
                   </div>
                 </div>
-                <button class="btn btn-primary" type="submit" name="btnEnviar" value="Button 1">Enviar</button>
+                <div class="form-row">
+                    <div class="col-md-10 mb-10">
+                        <button class="btn btn-primary" type="submit" name="btnEnviar" value="Button 1">Enviar</button>
+                    </div>
+                </div>
              </form>
         </div>
     </body>

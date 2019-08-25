@@ -20,7 +20,8 @@ public class servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nombre = request.getParameter("nombre");
+         System.out.println("mero" +  request.getParameter("nombre") ); 
+        String nombre = (String) request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String pais = request.getParameter("pais");
         String comentario = request.getParameter("comentario");
@@ -31,7 +32,6 @@ public class servlet extends HttpServlet {
         System.out.println(pais ); 
         System.out.println( comentario ); 
         System.out.println( correo ); 
-        
         
         LogicaContactenos logicaContactenos = new LogicaContactenos(nombre, apellido, pais, comentario, correo);
 

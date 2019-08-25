@@ -50,7 +50,7 @@ and open the template in the editor.
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="validationDefault02">Apellido</label>
@@ -75,7 +75,11 @@ and open the template in the editor.
                     <textarea class="form-control rounded-0" id="commentario" placeholder="Comentarios" rows="10"></textarea>
                   </div>
                 </div>
-                <button class="btn btn-primary" type="submit" name="btnEnviar" value="Button 1">Enviar</button>
+                <div class="form-row">
+                    <div class="col-md-10 mb-10">
+                        <button class="btn btn-primary" type="submit" name="btnEnviar" value="Button 1">Enviar</button>
+                    </div>
+                </div>
              </form>
         </div>
     </body>

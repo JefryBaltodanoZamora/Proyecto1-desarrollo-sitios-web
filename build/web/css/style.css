@@ -1,0 +1,128 @@
+/*.navbar-nav li {
+    color: white;
+    &:hover {
+        background-color: #D9E8F5;
+        color: white;
+    }
+}
+
+.navbar {
+    background-color: #052A69;
+    color: white;
+    border-radius: 0px 0px 30px 30px;
+    -moz-border-radius: 0px 0px 30px 30px;
+    -webkit-border-radius: 0px 0px 30px 30px;
+    border: 0px solid black;
+}*/
+
+
+
+body {
+    background-color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.button {
+    border-radius: 56px;
+    -moz-border-radius: 56px;
+    -webkit-border-radius: 56;
+}
+
+h1 {
+    font-size: 23px;
+    text-align: center;
+    color: #052A69;
+}
+
+.btn {
+    color: white;
+    background-color: #F20161;
+    border-color: #F20161;
+}
+
+.product{
+    border: 2px solid #D9E8F5;
+    background-color: #91BED4;
+    margin: 0px 2%;
+    padding: 5px;
+    transition: 0.3s;
+
+}
+.product:hover{
+    box-shadow: 3px 9px 18px 3px #91BED4;
+    background-color: #D9E8F5;
+    border: 2px solid #052A69;
+    color: #F20161; 
+}
+
+.sidebar {
+    border-radius: 5px 25px 25px 5px;
+    -moz-border-radius: 5px 25px 25px 5px;
+    -webkit-border-radius: 5px 25px 25px 5px;
+    background-color: #052A69;
+    box-shadow: 8px #D9E8F5;
+    color: #ffffff;
+    margin: 25px 5px;
+    padding: 5px;
+}
+
+.maincontent{
+    border: 2px solid #D9E8F5;
+    background-color: #91BED4;
+    margin-top: 5px;
+    padding: 5px;
+    box-shadow: 3px 6px 3px 6px #D9E8F5;
+}
+
+.content{
+    border: 2px solid #D9E8F5;
+    background-color: #91BED4;
+    margin: 25px 2%;
+    padding: 5px 10px;
+    box-shadow: 3px 6px 3px 6px #D9E8F5;
+    font-size: 16px;
+}
+
+.imgSidebar{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+}
+
+.footer {
+    background-color: #052A69;
+    border-radius: 30px 30px 0px 0px;
+    -moz-border-radius: 30px 30px 0px 0px;
+    -webkit-border-radius: 30px 30px 0px 0px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.row{
+    min-height: 700px;
+}
+
+.contact{
+    padding: 25px;
+}
+
+.contact label{
+    color: #F20161;
+    font-weight: bold;
+    size: 14px;
+}
+
+.sidebar h2{
+    font-size: 24px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.sidebar h4{
+    font-size: 18px;
+    text-align: center;
+}

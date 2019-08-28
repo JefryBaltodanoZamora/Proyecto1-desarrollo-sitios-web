@@ -48,31 +48,31 @@ and open the template in the editor.
         </nav>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                <form class="contact" action="${pageContext.request.contextPath}/servlet" method="post">
+                <form class="contact" action="${pageContext.request.contextPath}/Servlet" method="post">
                     <div class="form-row">
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault01">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                         </div>
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault02">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault03">Pais</label>
-                            <input type="text" class="form-control" id="pais" placeholder="Pais" required>
+                            <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais" required>
                         </div>
                         <div class="col-md-5 mb-3">
                             <label for="validationDefault04">Correo</label>
-                            <input type="email" class="form-control" id="Correo" placeholder="Correo" required>
+                            <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-12 mb-12">
                             <label for="validationDefault04">Comentarios</label>
-                            <textarea class="form-control rounded-0" id="commentario" placeholder="Comentarios" rows="10"></textarea>
+                            <textarea class="form-control rounded-0" id="comentario" name="comentario" placeholder="Comentarios" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="form-row">

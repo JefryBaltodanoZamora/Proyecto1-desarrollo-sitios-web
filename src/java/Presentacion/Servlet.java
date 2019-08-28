@@ -15,12 +15,11 @@ import javax.servlet.http.HttpServlet;
  *
  * @author jbaltoda
  */
-public class servlet extends HttpServlet {
+public class Servlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-         System.out.println("mero" +  request.getParameter("nombre") ); 
         String nombre = (String) request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String pais = request.getParameter("pais");

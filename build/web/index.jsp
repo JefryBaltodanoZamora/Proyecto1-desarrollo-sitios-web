@@ -19,6 +19,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,8 +49,40 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
-        <div class="row">
-            <div class="maincontent col-sm-12 col-md-12 col-lg-12">Este es el inicio de la página. Talvez poner un slideshow o una imagen de fondo</div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div id="circle" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#circle" data-slide-to="0" class="active"></li>
+                        <li data-target="#circle" data-slide-to="1"></li>
+                        <li data-target="#circle" data-slide-to="2"></li>
+                        <li data-target="#circle" data-slide-to="3"></li>
+                        <li data-target="#circle" data-slide-to="4"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="imagenes/banner1.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="imagenes/banner2.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="imagenes/banner3.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="imagenes/banner4.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="imagenes/banner5.jpg">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#circle" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#circle" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+            </div>
         </div>
         <div class="footer col-sm-12 col-md-12 col-lg-12">
             <div class="copyright">
@@ -56,4 +91,3 @@ and open the template in the editor.
         </div>
     </body>
 </html>
-

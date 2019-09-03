@@ -23,7 +23,7 @@ and open the template in the editor.
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="./">Proyecto1</a>
+            <a class="navbar-brand" href="./"><img src="imagenes/logo.png" alt="Image" class="imgLogo">Zona D-Pad</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -89,10 +89,11 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        <div class="footer col-sm-12 col-md-12 col-lg-12">
+        
+    </body>
+    <footer class="footer col-sm-12 col-md-12 col-lg-12">
             <div class="copyright">
                 Copyright by Universidad Nacional de Costa Rica<br>2019
             </div>
-        </div> 
-    </body>
+    </footer> 
 </html>

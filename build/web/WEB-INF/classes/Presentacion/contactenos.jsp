@@ -1,17 +1,7 @@
-<%-- 
-    Document   : contactenos
-    Created on : Aug 24, 2019, 3:01:22 PM
-    Author     : jbaltoda
---%>
+
 <%@page import="java.util.List"%>
 <%@page import="Dominio.LogicaContactenos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Contactenos</title>
@@ -20,12 +10,11 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="./">Proyecto1</a>
+            <a class="navbar-brand" href="./"><img src="imagenes/logo.png" alt="Image" class="imgLogo">Zona D-Pad</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,6 +36,22 @@ and open the template in the editor.
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <%
+                    if (session != null) {
+                        if (session.getAttribute("usuario") != null) {
+                            String usuario = (String) session.getAttribute("usuario");
+                            out.println("Hello, " + usuario);
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='btnCerrar'></form></li></ul>");
+                        } else { 
+                            //response.sendRedirect("login.html");
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                        }
+                    }else{
+                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                    }
+                %>
             </div>
         </nav>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">

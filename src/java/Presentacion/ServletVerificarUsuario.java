@@ -27,6 +27,7 @@ public class ServletVerificarUsuario extends HttpServlet {
             if(prueba){
                 HttpSession httpSession=request.getSession(true);
                 httpSession.setAttribute("usuario",usuario);
+                System.out.println( "Login ok" ); 
                 request.getRequestDispatcher("./index.jsp").forward(request, response);
             }else{
                 System.out.println( "Pop up con error" ); 

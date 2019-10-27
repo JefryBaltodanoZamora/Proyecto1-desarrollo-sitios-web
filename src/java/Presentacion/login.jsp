@@ -70,7 +70,7 @@
                     <div class="form-row">
                         <label for="validationDefault04">Cuenta</label>
                         <input type="number" class="form-control" id="Rcuenta" name="Rcuenta" placeholder="Cuenta">
-                    </div>
+                    </div> 
                     <div class="form-row">
                         <div class="col-md-10 mb-10">
                             <button class="btn btn-primary" type="submit" name="btnRegistrar" value="btnRegistrar">Registrar</button>

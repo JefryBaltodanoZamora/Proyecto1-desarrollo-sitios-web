@@ -1,16 +1,5 @@
-<%-- 
-    Document   : mision-vision
-    Created on : Aug 24, 2019, 3:02:40 PM
-    Author     : jbaltoda
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Mision y vision</title>
@@ -45,6 +34,22 @@ and open the template in the editor.
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
                     </li>
                 </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <%
+                    if (session != null) {
+                        if (session.getAttribute("usuario") != null) {
+                            String usuario = (String) session.getAttribute("usuario");
+                            out.println("Hello, " + usuario);
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='btnCerrar'></form></li></ul>");
+                        } else { 
+                            //response.sendRedirect("login.html");
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                        }
+                    }else{
+                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                    }
+                %>
             </div>
         </nav>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">

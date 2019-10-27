@@ -1,17 +1,4 @@
-
-<%-- 
-    Document   : index
-    Created on : Aug 24, 2019, 2:55:21 PM
-    Author     : jbaltoda
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Inicio</title>
@@ -44,42 +31,58 @@ and open the template in the editor.
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
-                    </li>
+                    </li>     
                 </ul>
             </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <%
+                    if (session != null) {
+                        if (session.getAttribute("usuario") != null) {
+                            String usuario = (String) session.getAttribute("usuario");
+                            out.println("Hello, " + usuario);
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='btnCerrar'></form></li></ul>");
+                        } else { 
+                            //response.sendRedirect("login.html");
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                        }
+                    }else{
+                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                    }
+                %>
+            </div>
         </nav>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div id="circle" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li data-target="#circle" data-slide-to="0" class="active"></li>
-                        <li data-target="#circle" data-slide-to="1"></li>
-                        <li data-target="#circle" data-slide-to="2"></li>
-                        <li data-target="#circle" data-slide-to="3"></li>
-                        <li data-target="#circle" data-slide-to="4"></li>
-                    </ul>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="imagenes/banner1.jpg">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="imagenes/banner2.jpg">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="imagenes/banner3.jpg">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="imagenes/banner4.jpg">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="imagenes/banner5.jpg">
-                        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div id="circle" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#circle" data-slide-to="0" class="active"></li>
+                    <li data-target="#circle" data-slide-to="1"></li>
+                    <li data-target="#circle" data-slide-to="2"></li>
+                    <li data-target="#circle" data-slide-to="3"></li>
+                    <li data-target="#circle" data-slide-to="4"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/banner1.jpg">
                     </div>
-                    <a class="carousel-control-prev" href="#circle" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#circle" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+                    <div class="carousel-item">
+                        <img src="imagenes/banner2.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/banner3.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/banner4.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/banner5.jpg">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#circle" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#circle" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
 
             </div>
         </div>

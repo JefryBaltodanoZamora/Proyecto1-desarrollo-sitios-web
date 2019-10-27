@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <title>Inicio</title>
+        <title>Ingresar usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -51,45 +51,57 @@
                 %>
             </div>
         </nav>
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div id="circle" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                    <li data-target="#circle" data-slide-to="0" class="active"></li>
-                    <li data-target="#circle" data-slide-to="1"></li>
-                    <li data-target="#circle" data-slide-to="2"></li>
-                    <li data-target="#circle" data-slide-to="3"></li>
-                    <li data-target="#circle" data-slide-to="4"></li>
-                </ul>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="imagenes/banner1.jpg">
+        <div class="row col-sm-12 col-md-12 col-lg-12">
+            <div class=" context col-sm-6 col-md-6 col-lg-6">
+                <h3>Registrar<h3>
+                <form class="contact" action="${pageContext.request.contextPath}/ServletCrearUsuario" method="post">
+                    <div class="form-row">
+                        <label for="validationDefault01">Usuario</label>
+                        <input type="text" class="form-control" id="Rusuario" name="Rusuario" placeholder="Usuario" required>
                     </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/banner2.jpg">
+                    <div class="form-row">
+                        <label for="validationDefault02">Contraseña</label>
+                        <input type="password" class="form-control" id="Rcontrasena" name="Rcontrasena" placeholder="Contrasena" required>
                     </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/banner3.jpg">
+                    <div class="form-row">
+                        <label for="validationDefault03">Nombre</label>
+                        <input type="text" class="form-control" id="Rnombre" name="Rnombre" placeholder="Nombre">
                     </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/banner4.jpg">
+                    <div class="form-row">
+                        <label for="validationDefault04">Cuenta</label>
+                        <input type="number" class="form-control" id="Rcuenta" name="Rcuenta" placeholder="Cuenta">
                     </div>
-                    <div class="carousel-item">
-                        <img src="imagenes/banner5.jpg">
+                    <div class="form-row">
+                        <div class="col-md-10 mb-10">
+                            <button class="btn btn-primary" type="submit" name="btnRegistrar" value="btnRegistrar">Registrar</button>
+                        </div>
                     </div>
-                </div>
-                <a class="carousel-control-prev" href="#circle" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#circle" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-
+                </form>
+            </div>
+            <div class="context col-sm-6 col-md-6 col-lg-6">
+                <h3>Ingresar<h3>
+                <form class="contact" action="${pageContext.request.contextPath}/ServletVerificarUsuario" method="post">
+                    <div class="form-row">
+                        <label for="validationDefault01">Usuario</label>
+                        <input type="text" class="form-control" id="Iusuario" name="Iusuario" placeholder="usuario" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="validationDefault02">Contraseña</label>
+                        <input type="password" class="form-control" id="Icontrasena" name="Icontrasena" placeholder="Contrasena" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-10 mb-10">
+                            <button class="btn btn-primary" type="submit" name="btnIngresar" value="btnIngresar">Enviar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="footer col-sm-12 col-md-12 col-lg-12">
-            <div class="copyright">
-                Copyright by Universidad Nacional de Costa Rica<br>2019
-            </div>
+    </div>
+    <div class="footer col-sm-12 col-md-12 col-lg-12">
+        <div class="copyright">
+            Copyright by Universidad Nacional de Costa Rica<br>2019
         </div>
-    </body>
+    </div>
+</body>
 </html>

@@ -52,6 +52,13 @@
             </div>
         </nav>
         <div class="col-sm-12 col-md-12 col-lg-12">
+            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="V7S7NFD5MK3LC">
+<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+
             <div id="circle" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
                     <li data-target="#circle" data-slide-to="0" class="active"></li>

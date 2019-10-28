@@ -8,6 +8,10 @@
         <servlet-name>ServletCrearUsuario</servlet-name>
         <servlet-class>Presentacion.ServletCrearUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletObtenerProductos</servlet-name>
+        <servlet-class>Presentacion.ServletObtenerProductos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ServletCrearUsuario</servlet-name>
         <url-pattern>/ServletCrearUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletObtenerProductos</servlet-name>
+        <url-pattern>/ServletObtenerProductos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

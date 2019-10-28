@@ -34,6 +34,13 @@
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
                     </li>
                 </ul>
+                <%
+                    if (session != null) {
+                        if (session.getAttribute("usuario") != null) {
+                            out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='btnCompra'></form></li>");
+                        }
+                    } 
+                %>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <%

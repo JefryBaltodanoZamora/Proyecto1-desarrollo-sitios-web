@@ -32,6 +32,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
                     </li>
+                    <%
+                        if (session != null) {
+                            if (session.getAttribute("usuario") != null) {
+                                out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='btnCompra'></form></li>");
+                            }
+                        }
+                    %>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,11 +48,11 @@
                             String usuario = (String) session.getAttribute("usuario");
                             out.println("Hello, " + usuario);
                             out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='btnCerrar'></form></li></ul>");
-                        } else { 
+                        } else {
                             //response.sendRedirect("login.html");
                             out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
                         }
-                    }else{
+                    } else {
                         out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
                     }
                 %>
@@ -93,11 +100,11 @@
                 </div>
             </div>
         </div>
-        
+
     </body>
     <footer class="footer col-sm-12 col-md-12 col-lg-12">
-            <div class="copyright">
-                Copyright by Universidad Nacional de Costa Rica<br>2019
-            </div>
+        <div class="copyright">
+            Copyright by Universidad Nacional de Costa Rica<br>2019
+        </div>
     </footer> 
 </html>

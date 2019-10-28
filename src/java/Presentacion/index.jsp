@@ -31,7 +31,14 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
-                    </li>     
+                    </li>
+                    <%
+                        if (session != null) {
+                            if (session.getAttribute("usuario") != null) {
+                                out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='btnCompra'></form></li>");
+                            }
+                        } 
+                    %>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,36 +59,6 @@
             </div>
         </nav>
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="GAQSETGD4UUTY">
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-            
-            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="V7S7NFD5MK3LC">
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
-            
-            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="QYE7A7JTQSDGQ">
-<table>
-<tr><td><input type="hidden" name="on0" value="Almacenamiento">Almacenamiento</td></tr><tr><td><select name="os0">
-	<option value="500GB">500GB $350.00 USD</option>
-	<option value="1TB">1TB $400.00 USD</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-
             <div id="circle" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
                     <li data-target="#circle" data-slide-to="0" class="active"></li>

@@ -1,7 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
-        <title>Acerca de</title>
+        <title>Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,8 +18,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./">Inicio</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./historia.jsp">Historia</a>
@@ -26,8 +27,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./mision-vision.jsp">Misión y Visión</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./acerca-de.jsp">Acerca de <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./acerca-de.jsp">Acerca de</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contactenos.jsp">Contáctenos</a>
@@ -37,7 +38,7 @@
                             if (session.getAttribute("usuario") != null) {
                                 out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='btnCompra'></form></li>");
                             }
-                        }
+                        } 
                     %>
                 </ul>
             </div>
@@ -58,53 +59,36 @@
                 %>
             </div>
         </nav>
-        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                <h1>Acerca de</h1>
-                <div>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting ind
-                    ustry. Lorem Ipsum has been the industry's standard dummy text ever 
-                    since the 1500s, when an unknown printer took a galley of type and 
-                    scrambled it to make a type specimen book. It has survived not only 
-                    five centuries, but also the leap into electronic typesetting, rema
-                    ining essentially unchanged. It was popularised in the 1960s with th
-                    e release of Letraset sheets containing Lorem Ipsum passages, and mo
-                    re recently with desktop publishing software like Aldus PageMaker in
-                    cluding versions of Lorem Ipsum
-                    Lorem Ipsum is simply dummy text of the printing and typesetting ind
-                    ustry. Lorem Ipsum has been the industry's standard dummy text ever 
-                    since the 1500s, when an unknown printer took a galley of type and 
-                    scrambled it to make a type specimen book. It has survived not only 
-                    five centuries, but also the leap into electronic typesetting, rema
-                    ining essentially unchanged. It was popularised in the 1960s with th
-                    e release of Letraset sheets containing Lorem Ipsum passages, and mo
-                    re recently with desktop publishing software like Aldus PageMaker in
-                    cluding versions of Lorem Ipsum
-                </div>
-            </div>
-            <div class="sidebar col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                <div class="categories">
-                    <h2>Productos recomendados</h2>
-                    <div class="product">
-                        <h4>Nintendo Switch</h4>
-                        <img src="imagenes/s1.png" alt="Image" class="imgSidebar">
-                    </div>
-                    <div class="product">
-                        <h4>Xbox One</h4>
-                        <img src="imagenes/s2.png" alt="Image" class="imgSidebar">
-                    </div>
-                    <div class="product">
-                        <h4>Play Station 4</h4>
-                        <img src="imagenes/s3.png" alt="Image" class="imgSidebar">
-                    </div>
-                </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Precio</th>
+                    <th>Comprar</th>
+                </tr>
+                <c:forEach items="${productos}" var="usr">
+                    <tr>
+                        <td>${usr.id}</td>
+                        <td>${usr.nombre}</td> 
+                        <td> <img src=${usr.imagen} alt="Image" class="imgSidebar"></td> 
+                        <td>$${usr.precio}</td> 
+                        <td><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value=${usr.paypal}>
+                                <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <div class="footer col-sm-12 col-md-12 col-lg-12">
+            <div class="copyright">
+                Copyright by Universidad Nacional de Costa Rica<br>2019
             </div>
         </div>
-
     </body>
-    <footer class="footer col-sm-12 col-md-12 col-lg-12">
-        <div class="copyright">
-            Copyright by Universidad Nacional de Costa Rica<br>2019
-        </div>
-    </footer> 
 </html>

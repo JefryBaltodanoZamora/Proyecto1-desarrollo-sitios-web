@@ -37,7 +37,7 @@
                 <%
                     if (session != null) {
                         if (session.getAttribute("usuario") != null) {
-                            out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='btnCompra'></form></li>");
+                            out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='Ver catálogo de productos'></form></li>");
                         }
                     } 
                 %>
@@ -48,13 +48,13 @@
                         if (session.getAttribute("usuario") != null) {
                             String usuario = (String) session.getAttribute("usuario");
                             out.println("Hello, " + usuario);
-                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='btnCerrar'></form></li></ul>");
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='Cerrar sesión'></form></li></ul>");
                         } else { 
                             //response.sendRedirect("login.html");
-                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Iniciar sesión</a></li></ul>");
                         }
                     }else{
-                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Login</a></li></ul>");
+                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Iniciar sesión</a></li></ul>");
                     }
                 %>
             </div>

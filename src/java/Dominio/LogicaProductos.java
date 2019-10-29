@@ -25,7 +25,7 @@ public class LogicaProductos {
     }
     
     public boolean consultarProductos(){
-        return listaProductos.consultarProductos();
+        return listaProductos.obtenerProductosDesdeDB();
     }
     
     public List<Map> obtenerProductos(){

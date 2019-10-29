@@ -1,5 +1,9 @@
 package Datos;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +28,44 @@ public class ListaProductos {
 
     public void setProductos(List<Map> productos) {
         this.productos = productos;
+    }
+    
+    public boolean obtenerProductosDesdeDB(){
+        try
+        {
+          // create a mysql database connection
+          String myDriver = "com.mysql.cj.jdbc.Driver";
+          String myUrl = "jdbc:mysql://localhost:3306/proyecto1";
+          Class.forName(myDriver);
+          Connection conn = DriverManager.getConnection(myUrl, "root", "");
+
+          // the mysql insert statement
+          String query = "select * from productos";
+
+          // create the mysql insert preparedstatement
+          PreparedStatement preparedStmt = conn.prepareStatement(query);
+          // execute the preparedstatement
+          ResultSet result =  preparedStmt.executeQuery();
+          Map map;
+          while (result.next())
+          {
+                map = new HashMap();
+                map.put("id", result.getString("id"));
+                map.put("nombre", result.getString("nombre"));
+                map.put("imagen", result.getString("imagen"));
+                map.put("precio", result.getString("precio"));
+                map.put("paypal", result.getString("buttonid"));
+                productos.add(map);
+          }
+          conn.close();
+          return !productos.isEmpty();
+        }
+        catch (Exception e)
+        {
+          System.err.println("Error verificando usuario.");
+          System.err.println(e.getMessage());
+          return false;
+        }
     }
     
     public boolean consultarProductos(){

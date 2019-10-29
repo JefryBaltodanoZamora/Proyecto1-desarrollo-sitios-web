@@ -48,7 +48,8 @@
                             if (session.getAttribute("usuario") != null) {
                                 String usuario = (String) session.getAttribute("usuario");
                                 out.println("<ul class='navbar-nav'><li class='nav-item saludo'>Hola " + usuario + " </li>");
-                                out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input class='btn btn-primary' type='submit' name='btnCerrar' value='Cerrar sesión'></form></li></ul>");
+                                out.println("<li class='nav-item saludo'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input class='btn btn-primary' type='submit' name='btnCarrito' value='Ver carrito de compra'></form></li>");
+                                out.println("<li class='nav-item saludo'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input class='btn btn-primary' type='submit' name='btnCerrar' value='Cerrar sesión'></form></li></ul>");
                             } else {
                                 out.println("<ul class='navbar-nav'><li class='nav-item'><form action='./login.jsp'><input class='btn btn-primary' type='submit' name='btnIniciar' value='Iniciar sesión'></form></li></ul>");
                             }
@@ -87,15 +88,15 @@
                     <h2>Productos recomendados</h2>
                     <div class="product">
                         <h4>Nintendo Switch</h4>
-                        <img src="imagenes/s1.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s1.png" alt="Image" class="imgSidebar"></a>
                     </div>
                     <div class="product">
                         <h4>Xbox One</h4>
-                        <img src="imagenes/s2.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s2.png" alt="Image" class="imgSidebar"></a>
                     </div>
                     <div class="product">
                         <h4>Play Station 4</h4>
-                        <img src="imagenes/s3.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s3.png" alt="Image" class="imgSidebar"></a>
                     </div>
                 </div>
             </div>

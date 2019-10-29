@@ -35,27 +35,28 @@
                     <%
                         if (session != null) {
                             if (session.getAttribute("usuario") != null) {
-                                out.println("<li class='nav-item'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input type='submit' name='btnCompra' value='Ver catálogo de productos'></form></li>");
+                                out.println("<li class='nav-item'><a class='nav-link' href='./ServletObtenerProductos'>Comprar productos</a></li>");
                             }
-                        } 
+                        }
                     %>
                 </ul>
             </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <%
-                    if (session != null) {
-                        if (session.getAttribute("usuario") != null) {
-                            String usuario = (String) session.getAttribute("usuario");
-                            out.println("Hello, " + usuario);
-                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input type='submit' name='btnCerrar' value='Cerrar sesión'></form></li></ul>");
-                        } else { 
-                            //response.sendRedirect("login.html");
-                            out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Iniciar sesión</a></li></ul>");
+            <div class="topnav-right">
+                <div class="collapse navbar-collapse" id="navbarNav">     
+                    <%
+                        if (session != null) {
+                            if (session.getAttribute("usuario") != null) {
+                                String usuario = (String) session.getAttribute("usuario");
+                                out.println("<ul class='navbar-nav'><li class='nav-item saludo'>Hola " + usuario + " </li>");
+                                out.println("<li class='nav-item saludo'><form action='" + request.getContextPath() + "/ServletObtenerProductos' method='post'><input class='btn btn-primary' type='submit' name='btnCarrito' value='Ver carrito de compra'></form></li>");
+                                out.println("<li class='nav-item saludo'><form action='" + request.getContextPath() + "/ServletSalidaUsuario' method='post'><input class='btn btn-primary' type='submit' name='btnCerrar' value='Cerrar sesión'></form></li></ul>");
+                            } else {
+                                out.println("<ul class='navbar-nav'><li class='nav-item'><form action='./login.jsp'><input class='btn btn-primary' type='submit' name='btnIniciar' value='Iniciar sesión'></form></li></ul>");
+                            }
+                        } else {
+                            out.println("<ul class='navbar-nav'><li class='nav-item'><form action='./login.jsp'><input class='btn btn-primary' type='submit' name='btnIniciar' value='Iniciar sesión'></form></li></ul>");
                         }
-                    }else{
-                        out.println("<ul class='navbar-nav'><li class='nav-item'><a class='nav-link' href='./login.jsp'>Iniciar sesión</a></li></ul>");
-                    }
-                %>
+                    %>
             </div>
         </nav>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -107,15 +108,15 @@
                     <h2>Productos recomendados</h2>
                     <div class="product">
                         <h4>Nintendo Switch</h4>
-                        <img src="imagenes/s1.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s1.png" alt="Image" class="imgSidebar"></a>
                     </div>
                     <div class="product">
                         <h4>Xbox One</h4>
-                        <img src="imagenes/s2.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s2.png" alt="Image" class="imgSidebar"></a>
                     </div>
                     <div class="product">
                         <h4>Play Station 4</h4>
-                        <img src="imagenes/s3.png" alt="Image" class="imgSidebar">
+                        <a href="./ServletObtenerProductos"><img src="imagenes/s3.png" alt="Image" class="imgSidebar"></a>
                     </div>
                 </div>
             </div>

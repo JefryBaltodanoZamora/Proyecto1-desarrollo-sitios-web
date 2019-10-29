@@ -1,8 +1,13 @@
 package Presentacion;
 
+import Dominio.LogicaProductos;
 import Dominio.LogicaUsuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,5 +40,25 @@ public class ServletVerificarUsuario extends HttpServlet {
             }
         } 
         
+    }
+    
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException{
+        HttpSession httpSession=request.getSession(true);
+        if (httpSession.getAttribute("usuario") == null) {
+            response.sendRedirect("./login.jsp");
+        }else{
+        LogicaProductos logicaProductos = new LogicaProductos();
+        
+        if (logicaProductos.consultarProductos()) {
+            List<Map> list = logicaProductos.obtenerProductos();
+            request.setAttribute("productos", list);
+            /*RequestDispatcher view = request.getRequestDispatcher("compras.jsp");
+            view.forward(request, response);*/
+            ServletContext context= getServletContext();
+            RequestDispatcher rd= context.getRequestDispatcher("/compras.jsp");
+            rd.forward(request, response);
+        }
+        }
     }
 }

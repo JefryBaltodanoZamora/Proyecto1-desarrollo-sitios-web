@@ -30,7 +30,7 @@ public class ServletObtenerProductos extends HttpServlet {
            request.getRequestDispatcher("./compras.jsp").forward(request, response);
             }
         }else if (request.getParameter("btnCarrito") != null) {
-            response.sendRedirect("https://www.paypal.com/webapps/shoppingcart?mfid=1572318997106_6a3c9d0cc50d5#/checkout/shoppingCart");
+            response.sendRedirect("https://www.paypal.com/webapps/shoppingcart?mfid=1572361102918_f685c9407abef&flowlogging_id=f685c9407abef#/checkout/shoppingCart");
         } 
     }
     
@@ -38,7 +38,7 @@ public class ServletObtenerProductos extends HttpServlet {
     throws IOException, ServletException{
         HttpSession httpSession=request.getSession(true);
         if (httpSession.getAttribute("usuario") == null) {
-            response.sendRedirect("./");
+            response.sendRedirect("./login.jsp");
         }else{
         LogicaProductos logicaProductos = new LogicaProductos();
         
